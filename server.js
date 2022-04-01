@@ -36,4 +36,4 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.static(path.join(__dirname,"public")))
 //for all inquiries on the site, redirect to the index.js found with controllers folder
 app.use(routes)
-app.listen(PORT, () => console.log('Now listening'));
+app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));

@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt")
 const sequelize = require("../config/connection")
 //creates a function to be used when the client is being logged in. Check router.get("/login") for the reference
 class user extends Model{
-    checkPasswork(loginPw){
+    checkPassword(loginPw){
         return bcrypt.compareSync(loginPw,this.password)
     }
 }

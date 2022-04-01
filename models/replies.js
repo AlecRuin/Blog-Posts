@@ -29,3 +29,4 @@ replies.init(
         modelName:"replies"
     }
 )
+module.exports=replies

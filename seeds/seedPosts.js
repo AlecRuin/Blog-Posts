@@ -2,7 +2,8 @@ const {posts}=require("../models")
 
 const postdata=[
     {
-        message: "i really hate mondays"
+        message: "i really hate mondays",
+        user_id:1
     }
 ]
 const seedPosts = () => posts.bulkCreate(postdata)
