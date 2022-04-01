@@ -3,7 +3,7 @@ const router = require('express').Router()
 //router.get redirects the client once they reached the final destination of the routes
 router.get("/",(res,req)=>{
     res.render('landingpage',{
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
     })
 })
 module.exports=router
