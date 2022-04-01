@@ -6,4 +6,8 @@ router.get("/",(req,res)=>{
         loggedIn: req.session.loggedIn,
     })
 })
+
+router.get('/login',(req,res)=>{
+    res.render("login")
+})
 module.exports=router

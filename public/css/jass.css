@@ -1479,6 +1479,7 @@ form [type='radio'] {
   }
   .justify-space-between-md {
     justify-content: space-between;
+    margin-left: calc(.5vw);
   }
   .justify-space-around-md {
     justify-content: space-around;
