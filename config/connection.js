@@ -6,11 +6,6 @@ const sequelize = new Sequelize(
     "wb39lt71kvkgdmw0.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "uzhtdcblxi2op95r",
     "iy51m0s1tctfmhgm",
-    {
-        host:"localhost",
-        dialect:"mysql",
-        port:3306
-    }
 )
 //finally, export the sequelize obj made. this will be used by the models created.
 module.exports=sequelize
