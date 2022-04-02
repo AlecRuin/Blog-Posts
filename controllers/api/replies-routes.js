@@ -1,6 +1,7 @@
 const withAuth = require("../../utils/auth")
 const router = require("express").Router()
 const replies= require("../../models/replies")
+//create a new reply
 router.post("/",withAuth,async(req,res)=>{
     try{
         console.log(req.body.formProps["blog-content"])
@@ -16,6 +17,7 @@ router.post("/",withAuth,async(req,res)=>{
         res.json(err)
     }
 })
+//delete reply with given id
 router.delete("/",async (req,res)=>{
     try{
         replies.destroy({

@@ -1,5 +1,6 @@
 const router=require("express").Router()
 const {user}=require('../../models')
+//create a new user and save it. then save the data to the session storage
 router.post("/",async(req,res)=>{
     try{
         const dbUserData = await user.create({
@@ -15,6 +16,7 @@ router.post("/",async(req,res)=>{
         err ? res.status(500).json(err):console.log("successfully created user")
     }
 })
+//check database to ensure user and password is correct
 router.post("/login",async(req,res)=>{
     try{
         const dbUserData = await user.findOne({
@@ -39,6 +41,7 @@ router.post("/login",async(req,res)=>{
         err ? res.status(500).json(err):console.log("successfully created user")
     }
 })
+//destroy current session
 router.post("/logout", (req,res)=>{
     if (req.session.loggedIn){
         req.session.destroy(()=>{

@@ -1,7 +1,7 @@
 const router = require("express").Router()
 const withAuth = require("../../utils/auth");
 const posts=require("../../models/posts")
-
+//create a new post
 router.post("/",withAuth, async (req,res)=>{
     try{
         console.log("Body:");
@@ -19,6 +19,7 @@ router.post("/",withAuth, async (req,res)=>{
         res.json(err)
     }
 });
+//delete a post with the given id
 router.delete("/",async (req,res)=>{
     try{
         posts.destroy({
