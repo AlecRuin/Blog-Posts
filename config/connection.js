@@ -3,9 +3,9 @@ const Sequelize = require("sequelize")
 require('dotenv').config()
 //create sequelize obj and grab values from environment folder and pass them through. 
 const sequelize = new Sequelize(
-    mr6azgrl8keuxivt,
-    uzhtdcblxi2op95r,
-    iy51m0s1tctfmhgm,
+    "mr6azgrl8keuxivt",
+    "uzhtdcblxi2op95r",
+    "iy51m0s1tctfmhgm",
     {
         host:"localhost",
         dialect:"mysql",
