@@ -8,10 +8,10 @@ router.get("/",async(req,res)=>{
             include:[
                 {
                     model:replies,
-                    attributes:["message"],
+                    attributes:["message","createdAt","id"],
                     include:[{
                         model:user,
-                        attributes:["username"]
+                        attributes:["username","id"]
                     }] 
                 },
                 {
@@ -23,6 +23,15 @@ router.get("/",async(req,res)=>{
         const postsMap = dbPostData.map((postsData)=>
             postsData.get({plain:true})
         );
+        if (req.session.User_Id) {
+            for (let key in postsMap) {
+                postsMap[key]["user_loggedIn"]=req.session.User_Id
+                for(let key2 in postsMap[key]["replies"]){
+                    postsMap[key]["replies"][key2]["user_loggedIn"]=req.session.User_Id
+                    console.log(postsMap[key]["replies"][key2]);
+                }
+            }
+        }
         console.log(postsMap);
         res.render('landingpage',{
             postsMap,

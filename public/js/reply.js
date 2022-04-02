@@ -1,5 +1,3 @@
-
-
 var allforms=document.querySelectorAll(".reply-form")
 for (var x=0;x<allforms.length;x++){
     allforms[x].addEventListener("submit",async (event)=>{
@@ -26,12 +24,5 @@ for (var x=0;x<allforms.length;x++){
               alert('Failed to make that post.');
             }
           }
-
-        
-        //impress Tyler
-
-
-
-        //stop wasting his time
     })
 }

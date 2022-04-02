@@ -7,5 +7,14 @@ module.exports = {
         new Date(date).getFullYear() + 5
       }`;
     },
-  };
-  
+    setvar:(varName, varValue, options)=>{
+      options.data.root[varName] = varValue;
+    },
+    equalto:(var1,var2)=>{
+      if (var1==var2){
+        return true
+      }else{
+        return false
+      }
+    },
+};

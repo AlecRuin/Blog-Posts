@@ -27,6 +27,7 @@ automatically search for a folder called views/layouts/main.handlebars to use as
 template for all pages. however, nothing will be shown unless app.render is used in 
 conjunction with another handle bar. 
 */
+
 const hbs = expresshandlebars.create({helpers})
 app.engine("handlebars",hbs.engine)
 app.set("view engine","handlebars")
