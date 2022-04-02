@@ -16,6 +16,7 @@ router.get("/",async(req,res)=>{
             postsData.get({plain:true})
         );
         res.render('landingpage',{
+            postsMap,
             loggedIn: req.session.loggedIn,
         })
     }catch(err){

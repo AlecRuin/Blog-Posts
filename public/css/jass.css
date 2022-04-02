@@ -428,7 +428,6 @@ a:hover {
   color: #065b83;
   text-decoration: underline;
 }
-
 /* HEIGHT / WIDTH UTILS */
 .w-100 {
   width: 100%;
@@ -879,29 +878,6 @@ a:hover {
   text-align: right !important;
 }
 
-.text-primary {
-  color: #2d3e50 !important;
-}
-
-.text-info {
-  color: #1bbc9b !important;
-}
-
-.text-danger {
-  color: #e64c66 !important;
-}
-
-.text-default {
-  color: #aeaeae !important;
-}
-
-.text-light {
-  color: #d9e9e8 !important;
-}
-
-.text-dark {
-  color: #1a1a1a !important;
-}
 
 .text-white {
   color: #ffffff !important;
