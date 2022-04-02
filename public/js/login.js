@@ -1,6 +1,6 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
-  
+    //grab data inserted and attempt a login
     const username = document.querySelector('#username-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
   
@@ -10,7 +10,7 @@ const loginFormHandler = async (event) => {
         body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },
       });
-  
+      
       if (response.ok) {
         document.location.replace('/');
       } else {
@@ -18,7 +18,7 @@ const loginFormHandler = async (event) => {
       }
     }
 };
-  
+  //attempt to make a new user with the data given
 const signupFormHandler = async (event) => {
     event.preventDefault();
     const username = document.querySelector('#username-signup').value.trim();

@@ -1,7 +1,7 @@
 const posts=require('./posts')
 const replies= require("./replies")
 const user=require('./user')
-
+//creates a user model for MySQL2 to use
 user.hasMany(posts,{
     foreignKey:"user_id"
 })

@@ -10,7 +10,6 @@ for (var x=0;x<allforms.length;x++){
         formProps["id"]=event.target.id
         formProps["blog-content"].trim()
         console.log(formProps);
-
         //do magic that will save the reply to the db
         if (formProps["blog-content"]) {
             const response = await fetch('/api/reply', {

@@ -1,3 +1,4 @@
+//when someone clicks on a delete button for a post, call to delete it. 
 var deleteposts = document.querySelectorAll(".delete-post-form")
 for (var x=0; x<deleteposts.length;x++){
     deleteposts[x].addEventListener("submit",async(event)=>{
@@ -14,6 +15,7 @@ for (var x=0; x<deleteposts.length;x++){
             }
     })
 }
+//when someone clicks on a delete button for a reply, call to delete it. 
 var deletereplies = document.querySelectorAll(".delete-reply-form")
 for (var x=0; x<deletereplies.length;x++){
     deletereplies[x].addEventListener("submit",async(event)=>{

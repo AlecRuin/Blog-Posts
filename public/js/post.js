@@ -1,3 +1,4 @@
+//grab blog_content and post it to server to attempt to save it as a post
 const postHandler = async (event) => {
     event.preventDefault();
     const blog_content = document.getElementById("blog-content").value.trim();

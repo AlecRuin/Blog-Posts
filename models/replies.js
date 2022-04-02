@@ -2,7 +2,7 @@ const {Model,DataTypes}=require("sequelize")
 const sequelize=require("../config/connection")
 
 class replies extends Model{}
-
+//creates a replies model for MySQL2 to use
 replies.init(
     {
         id:{

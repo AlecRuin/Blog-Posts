@@ -1,7 +1,7 @@
 const {Model,DataTypes}=require("sequelize")
 const sequelize=require("../config/connection")
 class posts extends Model{}
-
+//creates a posts model for MySQL2 to use
 posts.init(
     {
         id:{

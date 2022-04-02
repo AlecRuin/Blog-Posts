@@ -20,9 +20,11 @@ router.get("/",async(req,res)=>{
                 }
             ]
         });
+        //simplify data recieved.
         const postsMap = dbPostData.map((postsData)=>
             postsData.get({plain:true})
         );
+        //insert User_ID to every crevice of the data so handlebars can use it
         if (req.session.User_Id) {
             for (let key in postsMap) {
                 postsMap[key]["user_loggedIn"]=req.session.User_Id
@@ -32,6 +34,7 @@ router.get("/",async(req,res)=>{
                 }
             }
         }
+        //render the handlebars
         console.log(postsMap);
         res.render('landingpage',{
             postsMap,
