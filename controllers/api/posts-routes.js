@@ -16,9 +16,7 @@ router.post("/",withAuth, async (req,res)=>{
         )
         res.status(200).json()
     }catch(err){
-
+        res.json(err)
     }
-
-    
 })
 module.exports = router
