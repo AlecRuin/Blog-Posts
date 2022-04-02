@@ -8,13 +8,23 @@ router.get("/",async(req,res)=>{
             include:[
                 {
                     model:replies,
-                    attributes:["message"]
+                    attributes:["message"],
+                    include:[{
+                        model:user,
+                        attributes:["username"]
+                    }] 
+                },
+                {
+                    model:user,
+                    attributes:["username"]
                 }
             ]
         });
         const postsMap = dbPostData.map((postsData)=>
             postsData.get({plain:true})
         );
+        console.log("postMap:");
+        console.log(postsMap);
         res.render('landingpage',{
             postsMap,
             loggedIn: req.session.loggedIn,

@@ -14,5 +14,10 @@ posts.hasMany(replies,{
 replies.belongsTo(posts,{
     foreignKey:"post_id"
 })
-
+replies.belongsTo(user,{
+    foreignKey:"user_id"
+})
+user.hasMany(replies,{
+    foreignKey:"user_id"
+})
 module.exports={posts,replies,user}
