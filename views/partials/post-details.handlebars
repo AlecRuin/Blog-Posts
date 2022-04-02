@@ -1,14 +1,14 @@
 <section class="container-lg w-75 h-auto start-50 bg-white text-dark m-5 rounded shadow">
   <div class="text-primary fw-bold" style="margin-bottom: 27px; padding-top: 18px;">{{user.username}}</div>
   <div style="padding-bottom: 25px;" class="fs-5">{{message}}</div>
-  {{log replies}}
+  {{log id}}
 {{#each replies as |reply-deets|}}
     <div class="text-primary fw-bold">{{user.username}}</div>
     <div style="padding-bottom: 25px;" class="fs-7">{{message}}</div> 
 {{/each}}
 
   {{#if LoggedIn}}
-  <form class="reply-form">
+  <form class="reply-form"id={{id}}>
         <textarea name="blog-content" id="blog-content" cols="30" rows="5"></textarea>
         <input value="Reply" type="submit">
   </form>

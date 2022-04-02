@@ -23,6 +23,7 @@ router.get("/",async(req,res)=>{
         const postsMap = dbPostData.map((postsData)=>
             postsData.get({plain:true})
         );
+        console.log(postsMap);
         res.render('landingpage',{
             postsMap,
             loggedIn: req.session.loggedIn,
