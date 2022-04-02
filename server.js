@@ -5,7 +5,7 @@ const expresshandlebars= require("express-handlebars")
 const SequelizeStore=require("connect-session-sequelize")(session.Store)
 
 const routes = require("./controllers")
-//const sequelize=require("./config/connection")
+const sequelize=require("./config/connection")
 const helpers = require("./utils/helpers")
 
 const app = express();
@@ -16,6 +16,9 @@ const sess = {
     cookie:{},
     resave:false,
     saveUninitialized:true,
+    store: new SequelizeStore({
+        db: sequelize,
+      }),
 }
 //use cookie
 app.use(session(sess))
@@ -36,4 +39,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.static(path.join(__dirname,"public")))
 //for all inquiries on the site, redirect to the index.js found with controllers folder
 app.use(routes)
-app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));
+
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));
+  });

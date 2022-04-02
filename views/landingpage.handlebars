@@ -1,3 +1,9 @@
+{{#if loggedIn}}
 {{#each postsMap as |post-deets|}}
-{{> post-details}}
+{{> post-details LoggedIn=true}}
 {{/each}}
+{{else}}
+{{#each postsMap as |post-deets|}}
+{{> post-details LoggedIn=false}}
+{{/each}}
+{{/if}}

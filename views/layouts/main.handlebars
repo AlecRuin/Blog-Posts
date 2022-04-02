@@ -26,12 +26,12 @@
     <div class="vw-75">
       {{#if loggedIn}}
       <section class="container-lg w-75 h-auto start-50 bg-white text-dark m-5 rounded shadow">
-        <form>
+        <form id="post-form">
+          <h4>Make a post!</h4>
             <textarea name="blog-content" id="blog-content" cols="30" rows="10"></textarea>
-            <input type="submit">
+            <input name="Post" type="submit">
         </form>
         <div class="text-primary fw-bold" style="margin-bottom: 27px; padding-top: 18px;">{{user.username}}</div>
-        <div style="padding-bottom: 25px;">{{message}}</div>
       </section> 
       {{/if}}
       {{{body}}}
@@ -39,6 +39,7 @@
   </main>
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
+  <script src=" ./js/post.js"></script>
   {{/if}}
 </body>
 

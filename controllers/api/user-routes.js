@@ -8,6 +8,7 @@ router.post("/",async(req,res)=>{
         });
         req.session.save(()=>{
             req.session.loggedIn=true;
+            req.session.User_Id=dbUserData.dataValues.id
             res.status(200).json(dbUserData)
         })
     }catch(err){
@@ -31,6 +32,7 @@ router.post("/login",async(req,res)=>{
         }
         req.session.save(()=>{
             req.session.loggedIn=true
+            req.session.User_Id=dbUserData.dataValues.id
             res.status(200).json({user:dbUserData,message:"logged in"})
         })
     }catch(err){
